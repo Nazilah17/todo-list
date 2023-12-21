@@ -1,36 +1,26 @@
-import { useState } from "react";
+import React, { useEffect } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import TaskList from "./components/TaskList";
 import Footer from "./components/Footer";
-
-const initialTasks = [];
+import { useDispatch, useSelector } from "react-redux";
+import { setTasks } from "./redux/tasks/tasksSlice";
 
 function App() {
-  const [tasks, setTasks] = useState(initialTasks);
+  const dispatch = useDispatch();
+  const tasks = useSelector((state) => state.tasks.value);
 
-  function handleAddTask(task) {
-    setTasks([...tasks, task]);
-  }
-
-  function handleDeleteTask(id) {
-    setTasks((tasks) => tasks.filter((task) => task.id !== id));
-  }
-
-  function handleCheckTask(id) {
-    setTasks((tasks) => tasks.map((task) => (task.id === id ? { ...task, checked: !task.checked } : task)));
-  }
-
-  function handleClearTasks() {
-    setTasks([]);
-  }
+  useEffect(() => {
+    dispatch(setTasks(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks, dispatch]);
 
   return (
     <div className="app">
       <Header />
-      <Form onAddTask={handleAddTask} />
-      <TaskList tasks={tasks} onDeleteTask={handleDeleteTask} onCheckTask={handleCheckTask} onClearTasks={handleClearTasks} />
-      <Footer tasks={tasks} />
+      <Form />
+      <TaskList />
+      <Footer />
     </div>
   );
 }

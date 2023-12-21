@@ -1,7 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTask } from "../redux/tasks/tasksSlice";
 
-export default function Form({ onAddTask }) {
+export default function Form() {
   const [activity, setActivity] = useState("");
+  const dispatch = useDispatch();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -10,9 +13,7 @@ export default function Form({ onAddTask }) {
 
     const newTask = { activity, checked: false, id: Date.now() };
 
-    onAddTask(newTask);
-
-    console.log(newTask);
+    dispatch(addTask(newTask));
 
     setActivity("");
   }

@@ -1,8 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Task from "./Task";
+import { useDispatch, useSelector } from "react-redux";
+import { clearTasks } from "../redux/tasks/tasksSlice";
 
-export default function TaskList({ tasks, onDeleteTask, onCheckTask, onClearTasks }) {
+export default function TaskList() {
+  const tasks = useSelector((state) => state.tasks.value);
   const [filterTasks, setFilterTasks] = useState("all");
+  const dispatch = useDispatch();
+
+  const handleClearTasks = () => {
+    dispatch(clearTasks());
+  };
 
   let filteredTasks;
 
@@ -28,12 +36,12 @@ export default function TaskList({ tasks, onDeleteTask, onCheckTask, onClearTask
       <div className="list">
         <ul>
           {filteredTasks.map((task) => (
-            <Task task={task} key={task.id} onDeleteTask={onDeleteTask} onCheckTask={onCheckTask} />
+            <Task task={task} key={task.id} />
           ))}
         </ul>
       </div>
       <div className="clear">
-        <button onClick={onClearTasks}>Bersihkan Daftar</button>
+        <button onClick={handleClearTasks}>Bersihkan Daftar</button>
       </div>
     </>
   );
