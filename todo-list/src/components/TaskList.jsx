@@ -28,10 +28,16 @@ export default function TaskList() {
 
   return (
     <>
-      <div className="filter">
-        <button onClick={() => setFilterTasks("all")}>All</button>
-        <button onClick={() => setFilterTasks("active")}>Active</button>
-        <button onClick={() => setFilterTasks("completed")}>Completed</button>
+      <div className="filter flex justify-between text-white text-sm mb-10">
+        <button onClick={() => setFilterTasks("all")} className="bg-fuchsia-800 w-28 h-9 rounded-3xl hover:bg-fuchsia-600">
+          All
+        </button>
+        <button onClick={() => setFilterTasks("active")} className="bg-fuchsia-800 w-28 h-9 rounded-3xl hover:bg-fuchsia-600">
+          Active
+        </button>
+        <button onClick={() => setFilterTasks("completed")} className="bg-fuchsia-800 w-28 h-9 rounded-3xl hover:bg-fuchsia-600">
+          Completed
+        </button>
       </div>
       <div className="list">
         <ul>
@@ -40,8 +46,10 @@ export default function TaskList() {
           ))}
         </ul>
       </div>
-      <div className="clear">
-        <button onClick={handleClearTasks}>Bersihkan Daftar</button>
+      <div className="clear flex justify-center">
+        <button onClick={handleClearTasks} className="bg-fuchsia-800 px-8 py-2 text-white rounded-md hover:bg-fuchsia-600">
+          Clear All
+        </button>
       </div>
     </>
   );

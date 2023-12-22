@@ -5,7 +5,6 @@ import TaskList from "./components/TaskList";
 import Footer from "./components/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { setTasks } from "./redux/tasks/tasksSlice";
-import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,9 +16,9 @@ function App() {
   }, [tasks, dispatch]);
 
   return (
-    <div className="app">
+    <div>
       <Header />
-      <div className="container">
+      <div className="mx-auto box-border w-fit p-4 bg-fuchsia-950 rounded-xl shadow-xl">
         <Form />
         <TaskList />
       </div>
