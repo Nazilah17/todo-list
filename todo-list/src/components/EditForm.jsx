@@ -20,26 +20,26 @@ export default function EditForm({ task, onCancel }) {
   }
 
   return (
-    <form className="edit-form flex h-13 my-6 items-center" onSubmit={handleSubmit}>
+    <form className="edit-form flex sm:h-13 h-10 my-6 items-center justify-center" onSubmit={handleSubmit}>
       <div>
         <input
           type="text"
           placeholder="edit here..."
           value={editedActivity}
           onChange={(e) => setEditedActivity(e.target.value)}
-          className="w-72 h-12 rounded-l-md border-0 bg-white/5 px-3.5 py-2 placeholder-white/30 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:outline-none focus:ring-2 focus:ring-fuchsia-800 sm:text-sm sm:leading-6"
+          className="sm:w-72 w-32 sm:h-12 h-10 rounded-l-md border-0 bg-white/5 px-3.5 py-2 placeholder-white/30 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:outline-none focus:ring-2 focus:ring-fuchsia-800 sm:text-sm text-xs sm:leading-6"
         />
       </div>
       <button
         type="button"
         onClick={onCancel}
-        className="bg-fuchsia-800 h-12 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-700"
+        className="bg-fuchsia-800 sm:h-12 h-10 sm:px-6 px-2 sm:py-2.5 py-1 sm:text-sm text-xs font-semibold text-white shadow-sm hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-700"
       >
-        <img src={CancelIcon} alt="cancel" className="w-3" />
+        <img src={CancelIcon} alt="cancel" className="sm:w-3 w-2.5" />
       </button>
       <button
         type="submit"
-        className="rounded-r-md h-12 bg-fuchsia-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-700"
+        className="rounded-r-md sm:h-12 h-10 bg-fuchsia-800 sm:px-3.5 px-1.5 sm:py-2.5 py-1 sm:text-sm text-xs sm:font-semibold font-medium text-white shadow-sm hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-700"
       >
         Save
       </button>

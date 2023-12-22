@@ -10,9 +10,10 @@ export default function Footer() {
   const percentage = Math.round((checkedTasks / totalTasks) * 100);
 
   return (
-    <footer className="stats mt-6 flex justify-center gap-20 text-fuchsia-950 text-lg font-semibold">
-      <span>Total Tasks : {totalTasks}</span>
+    <footer className="stats mt-6 text-center gap-10 text-fuchsia-950 sm:text-lg text-xs font-semibold">
+      <span className="items-center">Total Tasks : {totalTasks}</span>
       <span>
+        <br />
         Task completed : {checkedTasks} ({percentage}%)
       </span>
     </footer>

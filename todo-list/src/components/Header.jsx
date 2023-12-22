@@ -1,3 +1,3 @@
 export default function Header() {
-  return <h1 className="text-center text-fuchsia-950 text-4xl font-semibold p-6">To Do List</h1>;
+  return <h1 className="text-center text-fuchsia-950 sm:text-4xl text-2xl font-semibold sm:p-6 p-4">To Do List</h1>;
 }
