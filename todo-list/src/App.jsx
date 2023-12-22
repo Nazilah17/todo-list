@@ -5,6 +5,7 @@ import TaskList from "./components/TaskList";
 import Footer from "./components/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { setTasks } from "./redux/tasks/tasksSlice";
+import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,8 +19,10 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Form />
-      <TaskList />
+      <div className="container">
+        <Form />
+        <TaskList />
+      </div>
       <Footer />
     </div>
   );

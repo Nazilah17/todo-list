@@ -18,12 +18,18 @@ export const tasksSlice = createSlice({
     checkTask: (state, action) => {
       state.value = state.value.map((task) => (task.id === action.payload ? { ...task, checked: !task.checked } : task));
     },
+    editTask: (state, action) => {
+      const { id, editedActivity } = action.payload;
+
+      state.value = state.value.map((task) => (task.id === id ? { ...task, activity: editedActivity } : task));
+    },
+
     clearTasks: (state) => {
       state.value = [];
     },
   },
 });
 
-export const { setTasks, addTask, deleteTask, checkTask, clearTasks } = tasksSlice.actions;
+export const { setTasks, addTask, deleteTask, checkTask, editTask, clearTasks } = tasksSlice.actions;
 
 export default tasksSlice.reducer;
