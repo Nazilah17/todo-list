@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { editTask } from "../redux/tasks/tasksSlice";
 import CancelIcon from "../assets/cancel.svg";
+import PropTypes from "prop-types";
 
 export default function EditForm({ task, onCancel }) {
   const [editedActivity, setEditedActivity] = useState(task.activity);
@@ -46,3 +47,12 @@ export default function EditForm({ task, onCancel }) {
     </form>
   );
 }
+
+EditForm.propTypes = {
+  task: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    activity: PropTypes.string.isRequired,
+    checked: PropTypes.bool.isRequired,
+  }).isRequired,
+  onCancel: PropTypes.func.isRequired,
+};
