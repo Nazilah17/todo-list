@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div className="mx-auto box-border w-fit sm:p-4 bg-fuchsia-950 rounded-xl shadow-xl">
+      <div className="mx-auto box-border w-fit sm:p-4 bg-fuchsia-950 rounded-xl shadow-xl shadow-fuchsia-950/50">
         <Form />
         <TaskList />
       </div>

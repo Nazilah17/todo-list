@@ -36,7 +36,7 @@ export default function Task({ task }) {
               <div className="flex items-center sm:pl-4 pl-2">
                 <input className="sm:w-4 w-2.5 sm:h-10 h-3 accent-fuchsia-800" type="checkbox" checked={task.checked} onChange={handleCheckTasks} />
               </div>
-              <span className="text-white inline-flex items-center sm:w-72 w-32 sm:ml-3 ml-2 sm:text-base text-xs" style={task.checked ? { textDecoration: "line-through", color: "white" } : {}}>
+              <span className="text-white inline-flex items-center sm:w-72 w-32 sm:ml-3 ml-2 sm:text-base text-xs truncate" style={task.checked ? { textDecoration: "line-through", color: "white" } : {}}>
                 {task.activity}
               </span>
             </div>

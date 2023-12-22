@@ -27,9 +27,9 @@ export default function Form() {
           placeholder="add here . . ."
           value={activity}
           onChange={(e) => setActivity(e.target.value)}
-          className="sm:w-64 w-36 sm:h-10 h-8 sm:mr-3 rounded-md border-0 bg-white/5 sm:px-3.5 px-1.5 sm:py-2 sm:text-base text-sm placeholder-white/30 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:outline-none focus:ring-2 focus:ring-fuchsia-800"
+          className="sm:w-64 w-36 sm:h-10 h-8 sm:mr-11 mr-3 rounded-md border-0 bg-white/5 sm:px-3.5 px-1.5 sm:py-2 sm:text-base text-sm placeholder-white/30 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:outline-none focus:ring-2 focus:ring-fuchsia-800"
         />
-        <button className="rounded-md bg-fuchsia-800 sm:px-8 px-4 sm:py-2.5 sm:text-sm text-xs sm:font-semibold text-white shadow-sm hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-700">
+        <button className="rounded-md bg-fuchsia-800 sm:px-8 px-4 sm:py-2.5 sm:text-sm text-xs sm:font-semibold text-white shadow-lg hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fuchsia-700">
           Add
         </button>
       </div>
